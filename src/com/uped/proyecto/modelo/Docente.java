@@ -2,21 +2,21 @@ package com.uped.proyecto.modelo;
 
 public class Docente extends Persona {
     private String especialidad;
-    private int añosExperiencia;
+    private int aniosExperiencia;
 
-    public Docente(String nombre, String dui, String especialidad, int añosExperiencia) {
+    public Docente(String nombre, String dui, String especialidad, int aniosExperiencia) {
         super(nombre, dui);
         this.especialidad = especialidad;
-        this.añosExperiencia = añosExperiencia;
+        this.aniosExperiencia = aniosExperiencia;
     }
 
-    public void impartirClase(String materia) {
-
-        System.out.println(nombre + " imparte: " + materia);
+    @Override
+    public double calcularBeneficioAnual() {
+        return aniosExperiencia * 45.0;
     }
 
     @Override
     public String toString() {
-        return presentarse() + " | " + especialidad + " (" + añosExperiencia + " años)";
+        return presentarse() + " | " + especialidad + " (" + aniosExperiencia + " años)";
     }
 }
